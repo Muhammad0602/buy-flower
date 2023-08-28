@@ -23,7 +23,7 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: repeat(auto-fit, 300px);
   gap: 40px;
   background-color: #f5f5f542;
   padding: 10px 20px;
@@ -31,8 +31,9 @@ body {
 }
 
 .gallery img {
-  width: 300px;
+  width: 100%;
   height: 300px;
+  max-width: 300px;
 }
 
 .pagination {
@@ -61,6 +62,7 @@ body {
   padding: 10px;
   margin-top: 1rem;
 }
+
 .footer a {
   color: #09f24b;
   text-decoration: none;
@@ -69,4 +71,17 @@ body {
 
 .footer a:hover {
   color: #099a32a8;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, 180px);
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .gallery img {
+    max-width: 200px;
+    height: 200px;
+  }
 }
